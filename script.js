@@ -9,17 +9,17 @@ const showImg = document.getElementById('myimg');
 startBtn.addEventListener('click', function(){
     welcomePage.style.display = 'none';
     page1.style.display = 'block';
-    document.body.style.backgroundImage = "url('12.JPG')";
+    document.body.style.backgroundImage = "url('12.jpg')";
     document.body.style.backgroundSize = "cover";
     document.body.style.backgroundAttachment = "fixed"; // ทำให้พื้นหลังไม่เลื่อนตามรูป
 });
 
 const allImages = [
-    "1.JPG",
-    "2.JPG",
-    "3.JPG",
-    "4.JPG",
-    "6.JPG"
+    "1.jpg",
+    "2.jpg",
+    "3.jpg",
+    "4.jpg",
+    "6.jpg"
 ];   
 
 let count = 0;
@@ -34,4 +34,5 @@ btn.addEventListener('click', function(){
         count = 0;
     }
     showImg.src = allImages[count];
+
 });
