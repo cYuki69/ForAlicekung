@@ -16,6 +16,7 @@ startBtn.addEventListener('click', function(){
 });
 
 const allImages = [
+    "cat.jpg",
     "1.jpg",
     "2.jpg",
     "3.jpg",
@@ -43,11 +44,11 @@ btn.addEventListener('click', function(){
         
         // แสดงหน้าสุดท้าย
         finalPage.style.display = 'block';
-        
-        // แถม: เปลี่ยนสีพื้นหลังเป็นสี Sky-blue เข้มขึ้นเพื่อให้ดูพิเศษ
+        doccumect.body.style.background-img url('bg1.jpg');
         document.body.style.backgroundColor = "#bae6fd";
     } else {
         // ถ้ายังไม่ถึงรูปสุดท้าย ก็เปลี่ยนรูปตามปกติ
         showImg.src = allImages[count];
     }
 });
+
