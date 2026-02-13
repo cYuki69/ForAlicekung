@@ -63,6 +63,14 @@ button:hover{
     background-color: #5dade2;
 
 }
+#final-page {
+    animation: fadeIn 2s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
 
 
 
