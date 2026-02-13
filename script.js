@@ -3,17 +3,8 @@ const welcomePage = document.getElementById('welcome');
 const page1 = document.getElementById('page1');
 const finalPage = document.getElementById('final-page');
 
-
 const btn = document.getElementById('mybutton');
 const showImg = document.getElementById('myimg');
-let count = 0;
-startBtn.addEventListener('click', function(){
-    welcomePage.style.display = 'none';
-    page1.style.display = 'block';
-    document.body.style.backgroundImage = "url('12.jpg')";
-    document.body.style.backgroundSize = "cover";
-    document.body.style.backgroundAttachment = "fixed"; // ทำให้พื้นหลังไม่เลื่อนตามรูป
-});
 
 const allImages = [
     "cat.jpg",
@@ -24,34 +15,35 @@ const allImages = [
     "6.jpg"
 ];   
 
-btn.addEventListener('click', function(){
-    count = count+1;
-    if(count >= allImages.length){
-        count = 0;
-    }
-    showImg.src = allImages[count];
+let count = 0;
 
-     showImg.style.display = 'none';
+startBtn.addEventListener('click', function(){
+    welcomePage.style.display = 'none';
+    page1.style.display = 'block';
+    // ตั้งค่ารูปเริ่มต้นให้เป็นรูปแรกใน Array เมื่อกดเข้าหน้าหลัก
+    showImg.src = allImages[0]; 
+    document.body.style.backgroundImage = "url('12.jpg')";
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundAttachment = "fixed";
+});
+
+btn.addEventListener('click', function(){
+    count = count + 1; // เพิ่มค่า count เมื่อกดปุ่ม
+    
+    // ตรวจสอบว่าถ้ากดจนเกินจำนวนรูปภาพที่มี (จะไปหน้าสุดท้าย)
+    if(count >= allImages.length){
+        // 1. ซ่อนรูปภาพและปุ่ม Next
+        showImg.style.display = 'none';
         btn.style.display = 'none';
         
-        // แสดงหน้าสุดท้าย
+        // 2. แสดงหน้าสุดท้าย
         finalPage.style.display = 'block';
-        doccumect.body.style.background-img url('bg1.jpg');
+        
+        // 3. เปลี่ยนพื้นหลังเป็น bg1.jpg และปรับสีให้เข้ากับท้องฟ้าที่คุณชอบ
+        document.body.style.backgroundImage = "url('bg1.jpg')";
         document.body.style.backgroundColor = "#bae6fd";
     } else {
-        // ถ้ายังไม่ถึงรูปสุดท้าย ก็เปลี่ยนรูปตามปกติ
+        // ถ้ายังไม่ถึงรูปสุดท้าย ก็เปลี่ยนรูปตามปกติจาก Array
         showImg.src = allImages[count];
     }
-
 });
-
-btn.addEventListener('click', function(){
-    count = count + 1;
-    
-    // ตรวจสอบว่าถ้ากดจนเกินจำนวนรูปภาพที่มี
-    if(count >= allImages.length){
-        // ซ่อนรูปภาพและปุ่ม Next
-       
-});
-
-
