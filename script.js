@@ -1,6 +1,7 @@
 const startBtn = document.getElementById('start-btn');
 const welcomePage = document.getElementById('welcome');
 const page1 = document.getElementById('page1');
+const finalPage = document.getElementById('final-page');
 
 
 const btn = document.getElementById('mybutton');
@@ -31,3 +32,22 @@ btn.addEventListener('click', function(){
 
 });
 
+btn.addEventListener('click', function(){
+    count = count + 1;
+    
+    // ตรวจสอบว่าถ้ากดจนเกินจำนวนรูปภาพที่มี
+    if(count >= allImages.length){
+        // ซ่อนรูปภาพและปุ่ม Next
+        showImg.style.display = 'none';
+        btn.style.display = 'none';
+        
+        // แสดงหน้าสุดท้าย
+        finalPage.style.display = 'block';
+        
+        // แถม: เปลี่ยนสีพื้นหลังเป็นสี Sky-blue เข้มขึ้นเพื่อให้ดูพิเศษ
+        document.body.style.backgroundColor = "#bae6fd";
+    } else {
+        // ถ้ายังไม่ถึงรูปสุดท้าย ก็เปลี่ยนรูปตามปกติ
+        showImg.src = allImages[count];
+    }
+});
