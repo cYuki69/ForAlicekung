@@ -14,8 +14,9 @@ body{
 #page1{
     display: none;
 }
-.page1{
-    
+.button {
+    display: flex;
+    justify-content: center;
 }
 
 #myimg {
@@ -62,6 +63,7 @@ button:hover{
     background-color: #5dade2;
 
 }
+
 
 
 
